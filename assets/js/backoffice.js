@@ -42,18 +42,7 @@ backofficeForm.onsubmit = function (e) {
     imageUrl: document.getElementById("productImg").value,
     price: document.getElementById("productPrice").value,
   };
-  document.getElementById("resetBtn").onclick = function () {
-    e.preventDefault();
-    if (confirm("vuoi eliminare il prodotto?")) {
-      fetch(URL, {
-        method: "DELETE",
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzkzNmU2ZGI3NDcwMTAwMTU4YjJiOTgiLCJpYXQiOjE3Mzc3MTUzMDksImV4cCI6MTczODkyNDkwOX0.WTRnC2bHipbz_gG9ajIUdn6kzhAZhv1L3u1JzIUvL2o",
-        },
-      }).catch((error) => console.log(error));
-    }
-  };
+
   fetch(URL, {
     method: productId ? "PUT" : "POST",
     body: JSON.stringify(newProduct),
@@ -79,3 +68,23 @@ backofficeForm.onsubmit = function (e) {
     })
     .catch((error) => console.log(error));
 };
+document.getElementById("resetBtn").addEventListener("click", () => {
+  alert("sono nel click");
+  if (confirm("vuoi eliminare il prodotto?")) {
+    fetch(URL, {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzkzNmU2ZGI3NDcwMTAwMTU4YjJiOTgiLCJpYXQiOjE3Mzc3MTUzMDksImV4cCI6MTczODkyNDkwOX0.WTRnC2bHipbz_gG9ajIUdn6kzhAZhv1L3u1JzIUvL2o",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("elemento eliminato correttamente");
+        } else {
+          alert("errore nell'eliminazione");
+        }
+      })
+      .catch((error) => console.log(error));
+  }
+});
