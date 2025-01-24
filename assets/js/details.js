@@ -29,7 +29,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
     const description = document.createElement("p");
     description.innerText = product.description;
     const price = document.createElement("p");
-    price.innerText = product.price;
+    price.innerText = "prezzo: " + product.price + "€";
 
     details.appendChild(title);
     details.appendChild(img);
