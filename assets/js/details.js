@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("productId");
+const details = document.getElementById("details");
 fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
   method: "get",
   headers: {
@@ -11,9 +12,29 @@ fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
     if (response.ok) {
       return response.json();
     } else {
-      throw new erros();
+      throw new Error();
     }
   })
   .then((product) => {
-    product;
-  });
+    const title = document.createElement("h1");
+    title.classList.add("text-center");
+    title.innerText = product.name;
+    const img = document.createElement("img");
+    img.src = product.imageUrl;
+    img.classList.add("img-fluid");
+    img.alt = product.name;
+    const brand = document.createElement("h3");
+    brand.classList.add("text-center");
+    brand.innerText = product.brand;
+    const description = document.createElement("p");
+    description.innerText = product.description;
+    const price = document.createElement("p");
+    price.innerText = product.price;
+
+    details.appendChild(title);
+    details.appendChild(img);
+    details.appendChild(brand);
+    details.appendChild(description);
+    details.appendChild(price);
+  })
+  .catch((error) => console.log(error));

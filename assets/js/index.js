@@ -11,7 +11,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error("ERRORE");
+      throw new Error();
     }
   })
   .then((striveData) => {
