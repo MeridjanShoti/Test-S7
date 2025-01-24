@@ -25,9 +25,6 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
       const cardBody = document.createElement("div");
       cardBody.classList.add("card-body");
       const img = document.createElement("img");
-      img.onclick = () => {
-        window.location.assign("./details.html?imgId=" + product.id);
-      };
       img.src = product.imageUrl;
       img.alt = product.name + "preview";
       img.classList.add("bd-placeholder-img", "card-img-top");
@@ -44,7 +41,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
       const viewBtn = document.createElement("button");
       viewBtn.type = "button";
       viewBtn.classList.add("btn", "btn-sm", "btn-outline-secondary");
-      viewBtn.innerText = "View";
+      viewBtn.innerText = "Dettagli";
       const modifyBtn = document.createElement("button");
       modifyBtn.type = "button";
       modifyBtn.classList.add("btn", "btn-sm", "btn-outline-secondary");
@@ -67,6 +64,9 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
       modifyBtn.addEventListener("click", () => {
         window.location.assign("./backoffice.html?productId=" + product._id);
       });
+      viewBtn.onclick = () => {
+        window.location.assign("./details.html?productId=" + product.id);
+      };
     });
   })
   .catch((err) => console.log(err));

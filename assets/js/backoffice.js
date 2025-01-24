@@ -20,11 +20,11 @@ if (productId) {
       }
     })
     .then((product) => {
-      (product.name = document.getElementById("productName").value),
-        (product.description = document.getElementById("productDescription").value),
-        (product.brand = document.getElementById("productBrand").value),
-        (product.imageUrl = document.getElementById("productImg").value),
-        (product.price = document.getElementById("productPrice").value);
+      document.getElementById("productName").value = product.name;
+      document.getElementById("productDescription").value = product.description;
+      document.getElementById("productBrand").value = product.brand;
+      document.getElementById("productImg").value = product.imageUrl;
+      document.getElementById("productPrice").value = product.price;
     });
 }
 
@@ -54,6 +54,12 @@ backofficeForm.onsubmit = function (e) {
         throw new Error();
       }
     })
-    .then((product) => {})
+    .then((product) => {
+      (product.name = document.getElementById("productName").value),
+        (product.description = document.getElementById("productDescription").value),
+        (product.brand = document.getElementById("productBrand").value),
+        (product.imageUrl = document.getElementById("productImg").value),
+        (product.price = document.getElementById("productPrice").value);
+    })
     .catch((error) => console.log(error));
 };
