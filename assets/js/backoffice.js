@@ -25,6 +25,7 @@ if (productId) {
       document.getElementById("productBrand").value = product.brand;
       document.getElementById("productImg").value = product.imageUrl;
       document.getElementById("productPrice").value = product.price;
+      document.getElementById("insertBtn");
     });
 }
 
