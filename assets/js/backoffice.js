@@ -20,13 +20,20 @@ if (productId) {
       }
     })
     .then((product) => {
+      //scusi se non sto usando le variabili ma ho troppa confusione in testa e ragiono meglio così
       document.getElementById("productName").value = product.name;
       document.getElementById("productDescription").value = product.description;
       document.getElementById("productBrand").value = product.brand;
       document.getElementById("productImg").value = product.imageUrl;
       document.getElementById("productPrice").value = product.price;
       document.getElementById("insertBtn").innerText = "Modifica";
-    });
+    })
+    .catch((error) => console.log(error));
+  let deleteBtn = document.createElement("button");
+  deleteBtn.type = "button";
+  deleteBtn.classList.add("btn btn-danger");
+  deleteBtn.innerText = "Cancella Prodotto";
+  document.getElementById("btnContainer").appendChild(deleteBtn);
 }
 
 backofficeForm.onsubmit = function (e) {
