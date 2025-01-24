@@ -20,44 +20,42 @@
         </nav>
       </header>
       <div class="container w-50">
-        <div class="text-center">
-          <h1>BACKOFFICE</h1>
-          <p>Gestisci Prodotti</p>
-          <div class="shadow d-flex justify-content-center">
-            <form id="backofficeForm" class="container p-4 w-50">
-              <div class="flex-md-nowrap justify-content-md-between pb-2">
-                <label for="productName">Nome prodotto: </label>
-                <input type="text" id="productName" placeholder="Nome prodotto" required />
-              </div>
-              <div class="flex-md-nowrap justify-content-md-between pb-2">
-                <label for="productDescription">Descrizione prodotto: </label>
-                <textarea
-                  name="productDescription"
-                  id="productDescription"
-                  placeholder="Descrivi il prodotto"
-                  rows="3"
-                  cols="22"
-                  required
-                ></textarea>
-              </div>
-              <div class="flex-md-nowrap justify-content-md-between pb-2">
-                <label for="productBrand">Marca prodotto: </label>
-                <input type="text" placeholder="Nome brand" id="productBrand" required />
-              </div>
-              <div class="flex-md-nowrap justify-content-md-between pb-2">
-                <label for="productImg">Indirizzo prodotto: </label>
-                <input type="url" placeholder="inserisci url immagine" id="productImg" required />
-              </div>
-              <div class="flex-md-nowrap justify-content-md-between pb-2">
-                <label for="productPrice">Prezzo prodotto: </label>
-                <input type="number" placeholder="Prezzo in euro" id="productPrice" required />
-              </div>
-              <div class="p-3 mt-3 d-flex justify-content-between" id="btnContainer">
-                <button type="submit" class="btn btn-success" id="insertBtn">Inserisci Prodotto</button>
-                <button type="reset" class="btn btn-danger" id="resetBtn">Annulla</button>
-              </div>
-            </form>
-          </div>
+        <h1 class="text-center mt-5">BACKOFFICE</h1>
+        <p class="text-center">Gestisci Prodotti</p>
+        <div class="shadow d-flex justify-content-center mt-5">
+          <form id="backofficeForm" class="container p-4 d-flex flex-column gap-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+              <label for="productName">Nome prodotto: </label>
+              <input type="text" id="productName" placeholder="Nome prodotto" required />
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+              <label for="productDescription">Descrizione prodotto: </label>
+              <textarea
+                name="productDescription"
+                id="productDescription"
+                placeholder="Descrivi il prodotto"
+                rows="3"
+                cols="22"
+                required
+              ></textarea>
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+              <label for="productBrand">Marca prodotto: </label>
+              <input type="text" placeholder="Nome brand" id="productBrand" required />
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+              <label for="productImg">Indirizzo prodotto: </label>
+              <input type="url" placeholder="inserisci url immagine" id="productImg" required />
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between">
+              <label for="productPrice">Prezzo prodotto: </label>
+              <input type="number" placeholder="Prezzo in euro" id="productPrice" required />
+            </div>
+            <div class="p-3 mt-3 d-flex justify-content-center gap-3" id="btnContainer">
+              <button type="submit" class="btn btn-success" id="insertBtn">Inserisci Prodotto</button>
+              <button type="reset" class="btn btn-danger" id="resetBtn">Annulla</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
