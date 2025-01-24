@@ -20,14 +20,16 @@ if (productId) {
       }
     })
     .then((product) => {
-      backofficeForm.elements.name.value = product.name;
-      console.log(backofficeForm);
+      (product.name = document.getElementById("productName").value),
+        (product.description = document.getElementById("productDescription").value),
+        (product.brand = document.getElementById("productBrand").value),
+        (product.imageUrl = document.getElementById("productImg").value),
+        (product.price = document.getElementById("productPrice").value);
     });
 }
-console.log(backofficeForm);
+
 backofficeForm.onsubmit = function (e) {
   e.preventDefault();
-  alert("submit corretto");
   const newProduct = {
     name: document.getElementById("productName").value,
     description: document.getElementById("productDescription").value,
@@ -35,7 +37,7 @@ backofficeForm.onsubmit = function (e) {
     imageUrl: document.getElementById("productImg").value,
     price: document.getElementById("productPrice").value,
   };
-  console.log(newProduct);
+
   fetch(URL, {
     method: productId ? "PUT" : "POST",
     body: JSON.stringify(newProduct),
@@ -52,8 +54,6 @@ backofficeForm.onsubmit = function (e) {
         throw new Error();
       }
     })
-    .then((product) => {
-      console.log(product);
-    })
+    .then((product) => {})
     .catch((error) => console.log(error));
 };
