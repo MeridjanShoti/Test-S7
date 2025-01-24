@@ -39,7 +39,9 @@ fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
     details.appendChild(description);
     details.appendChild(price);
   })
-  .catch((error) => console.log(error))
+  .catch((error) => {
+    console.log(error);
+  })
   .finally(() => {
     isLoading(false);
   });

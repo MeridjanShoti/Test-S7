@@ -32,7 +32,9 @@ if (productId) {
       resetBtn.innerText = "Elimina Prodotto";
       resetBtn.type = "button";
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 backofficeForm.onsubmit = function (e) {
@@ -74,7 +76,9 @@ backofficeForm.onsubmit = function (e) {
       }
       backofficeForm.reset();
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+    });
 };
 resetBtn.addEventListener("click", (e) => {
   if (resetBtn.innerText === "Annulla") {
@@ -100,7 +104,9 @@ resetBtn.addEventListener("click", (e) => {
             throw new Error();
           }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }
 });
