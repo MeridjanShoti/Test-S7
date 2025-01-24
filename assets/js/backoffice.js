@@ -27,13 +27,9 @@ if (productId) {
       document.getElementById("productImg").value = product.imageUrl;
       document.getElementById("productPrice").value = product.price;
       document.getElementById("insertBtn").innerText = "Modifica";
+      document.getElementById("resetBtn").innerText = "Elimina Prodotto";
     })
     .catch((error) => console.log(error));
-  let deleteBtn = document.createElement("button");
-  deleteBtn.type = "button";
-  deleteBtn.classList.add("btn btn-danger");
-  deleteBtn.innerText = "Cancella Prodotto";
-  document.getElementById("btnContainer").appendChild(deleteBtn);
 }
 
 backofficeForm.onsubmit = function (e) {
@@ -45,7 +41,18 @@ backofficeForm.onsubmit = function (e) {
     imageUrl: document.getElementById("productImg").value,
     price: document.getElementById("productPrice").value,
   };
-
+  backofficeForm.onreset = function (e) {
+    e.preventDefault();
+    if (confirm("vuoi eliminare il prodotto?")) {
+      fetch(URL, {
+        method: "DELETE",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzkzNmU2ZGI3NDcwMTAwMTU4YjJiOTgiLCJpYXQiOjE3Mzc3MTUzMDksImV4cCI6MTczODkyNDkwOX0.WTRnC2bHipbz_gG9ajIUdn6kzhAZhv1L3u1JzIUvL2o",
+        },
+      }).catch((error) => console.log(error));
+    }
+  };
   fetch(URL, {
     method: productId ? "PUT" : "POST",
     body: JSON.stringify(newProduct),
