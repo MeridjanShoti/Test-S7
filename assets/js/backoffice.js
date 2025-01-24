@@ -28,6 +28,7 @@ if (productId) {
       document.getElementById("productPrice").value = product.price;
       document.getElementById("insertBtn").innerText = "Modifica";
       document.getElementById("resetBtn").innerText = "Elimina Prodotto";
+      document.getElementById("resetBtn").type = "button";
     })
     .catch((error) => console.log(error));
 }
@@ -41,7 +42,7 @@ backofficeForm.onsubmit = function (e) {
     imageUrl: document.getElementById("productImg").value,
     price: document.getElementById("productPrice").value,
   };
-  backofficeForm.onreset = function (e) {
+  document.getElementById("resetBtn").onclick = function () {
     e.preventDefault();
     if (confirm("vuoi eliminare il prodotto?")) {
       fetch(URL, {
