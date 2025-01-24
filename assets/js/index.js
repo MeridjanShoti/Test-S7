@@ -69,4 +69,15 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
       };
     });
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err))
+  .finally(() => {
+    isLoading(false);
+  });
+const isLoading = function (loadingState) {
+  const loading = document.querySelector(".loading-border");
+  if (loadingState) {
+    loading.classList.remove("d-none");
+  } else {
+    loading.classList.add("d-none");
+  }
+};
