@@ -65,7 +65,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/", {
         window.location.assign("./backoffice.html?productId=" + product._id);
       });
       viewBtn.onclick = () => {
-        window.location.assign("./details.html?productId=" + product.id);
+        window.location.assign("./details.html?productId=" + product._id);
       };
     });
   })
