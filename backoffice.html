@@ -25,11 +25,11 @@
           <p>Gestisci Prodotti</p>
           <div class="shadow d-flex justify-content-center">
             <form id="backofficeForm" class="p-4 w-50">
-              <div class="d-flex justify-content-between pb-2">
+              <div class="flex-md-nowrap justify-content-md-between pb-2 row">
                 <label for="productName">Nome prodotto: </label>
-                <input type="text" id="productName" placeholder="Nome prodotto" required />
+                <input type="text" id="productName" placeholder="Nome prodotto" class="col-12 col-md-6" required />
               </div>
-              <div class="d-flex justify-content-between pb-2">
+              <div class="flex-md-nowrap justify-content-md-between pb-2 row">
                 <label for="productDescription">Descrizione prodotto: </label>
                 <textarea
                   name="productDescription"
@@ -37,20 +37,27 @@
                   placeholder="Descrivi il prodotto"
                   rows="3"
                   cols="22"
+                  class="col-12 col-md-6"
                   required
                 ></textarea>
               </div>
-              <div class="d-flex justify-content-between pb-2">
+              <div class="flex-md-nowrap justify-content-md-between pb-2 row">
                 <label for="productBrand">Marca prodotto: </label>
-                <input type="text" placeholder="Nome brand" id="productBrand" required />
+                <input type="text" placeholder="Nome brand" id="productBrand" class="col-12 col-md-6" required />
               </div>
-              <div class="d-flex justify-content-between pb-2">
+              <div class="flex-md-nowrap justify-content-md-between pb-2 row">
                 <label for="productImg">Indirizzo prodotto: </label>
-                <input type="url" placeholder="inserisci url immagine" id="productImg" required />
+                <input
+                  type="url"
+                  placeholder="inserisci url immagine"
+                  id="productImg"
+                  class="col-12 col-md-6"
+                  required
+                />
               </div>
-              <div class="d-flex justify-content-between pb-2">
+              <div class="flex-md-nowrap justify-content-md-between pb-2 row">
                 <label for="productPrice">Prezzo prodotto: </label>
-                <input type="number" placeholder="Prezzo in euro" id="productImg" required />
+                <input type="number" placeholder="Prezzo in euro" id="productImg" class="col-12 col-md-6" required />
               </div>
               <div class="p-3 mt-3">
                 <button type="submit" class="btn btn-success" id="insertBtn">Inserisci Prodotto</button>
