@@ -46,7 +46,7 @@ fetch("https://striveschool-api.herokuapp.com/api/product/" + productId, {
     isLoading(false);
   });
 const isLoading = function (loadingState) {
-  const loading = document.querySelector(".loading-border");
+  const loading = document.querySelector(".spinner-border");
   if (loadingState) {
     loading.classList.remove("d-none");
   } else {
